@@ -1,0 +1,301 @@
+<!doctype html>
+<html lang="es">
+    <head>
+		<title>Proyecto Algara</title>
+		 <meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+		<link rel="stylesheet" href="CSS/Style.css">
+    </head>
+    <body>
+		<div class="sidenav">
+		  <a href="#">Menú:</a>
+		  <a href="#" data-toggle="modal" data-target="#modalSistema">Tutorial</a>
+		</div>
+		<div class="main">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-4">
+						<h4>Convertir de Decimal A Maya</h4>
+					</div>
+					<div class="col-md-4 offset-3">
+						<h4>Convertir de Maya A Decimal</h4>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-4">
+						<div id="grupo" class="input-group mb-3">
+							<input type="number" id="numero" value="0" class="form-control" placeholder="Escriba un numero entre 0 y 7999" aria-label="Escriba un numero entre 0 y 7999" aria-describedby="basic-addon2">
+								<div class="input-group-append">
+									<button class="btn btn-success" type="button" onClick="convertirMaya()">Convertir</button>
+								</div>
+						</div>
+						<div id="soloNumeros"></div>
+
+						<div id="responseAlerta"></div>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-md-2 offset-1">
+						<table id="tabla-maya" class="table">
+							<tbody align="center">
+								<tr>
+									<td bgcolor="#1A8BB4"></td>
+								</tr>
+								<tr>
+									<td id="34" class="tablita"></td>
+								</tr>
+								<tr>
+									<td id="33" class="tablita"></td>
+								</tr>
+								<tr>
+									<td id="32" class="tablita"></td>
+								</tr>
+								<tr>
+									<td id="31" class="tablita"></td>
+								</tr>
+								<tr>
+									<td bgcolor="#1A8BB4"></td>
+								</tr>
+								<tr>
+									<td id="24" class="tablita"></td>
+								</tr>
+								<tr>
+									<td id="23" class="tablita"></td>
+								</tr>
+								<tr>
+									<td id="22" class="tablita"></td>
+								</tr>
+								<tr>
+									<td id="21" class="tablita"></td>
+								</tr>
+								<tr>
+									<td bgcolor="#1A8BB4"></td>
+								</tr>
+								<tr>
+									<td id="14" class="tablita"></td>
+								</tr>
+								<tr>
+									<td id="13" class="tablita"></td>
+								</tr>
+								<tr>
+									<td id="12" class="tablita"></td>
+								</tr>
+								<tr>
+									<td id="11" class="tablita"></td>
+								</tr>
+								<tr>
+									<td bgcolor="#1A8BB4"></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+
+				<!--Tabla de conversión Maya a Decimal -->
+				<!--Tabla botones-->
+						<div class="col-md-1 offset-4">
+						<table id="tabla-decimal" class="table">
+							<tbody align="center">
+								<tr>
+									<td bgcolor="#1A8BB4"></td>
+								</tr>
+								<tr>
+									<td class="tablita"></td>
+								</tr>
+								<tr>
+									<td class="tablita"></td>
+								</tr>
+								<tr>
+									<td id="boton400" class="tablita"><button id="suma400" type="button" class="btn btn-sm btn-danger" onClick="agregar400();">+1</button></td>
+								</tr>
+								<tr>
+									<td class="tablita"></td>
+								</tr>
+								<tr>
+									<td bgcolor="#1A8BB4"></td>
+								</tr>
+								<tr>
+									<td class="tablita"></td>
+								</tr>
+								<tr>
+									<td class="tablita"></td>
+								</tr>
+								<tr>
+									<td id="boton20" class="tablita"><button id="suma20" type="button" class="btn btn-sm btn-danger" onClick="agregar20();" >+1</button></td>
+								</tr>
+								<tr>
+									<td class="tablita"></td>
+								</tr>
+								<tr>
+									<td bgcolor="#1A8BB4"></td>
+								</tr>
+								<tr>
+									<td class="tablita"></td>
+								</tr>
+								<tr>
+									<td class="tablita"></td>
+								</tr>
+								<tr>
+									<td id="boton1" class="tablita"><button type="button" id="suma1" class="btn btn-sm btn-danger" onClick="agregar1();" >+1</button></td>
+								</tr>
+								<tr>
+									<td class="tablita"></td>
+								</tr>
+								<tr>
+									<td bgcolor="#1A8BB4"></td>
+								</tr>
+							</tbody>
+						</table>		
+					</div>
+
+					<!--Tabla númeración maya-->
+					<div class="col-md-2">
+						<table id="tabla-decimal-maya" class="table">
+							<tbody align="center">
+								<tr>
+									<td bgcolor="#1A8BB4"></td>
+								</tr>
+								<tr>
+									<td id="n3f4" class="tablita"></td>
+								</tr>
+								<tr>
+									<td id="n3f3" class="tablita"></td>
+								</tr>
+								<tr>
+									<td id="n3f2" class="tablita"></td>
+								</tr>
+								<tr>
+									<td id="n3f1" class="tablita"></td>
+								</tr>
+								<tr>
+									<td bgcolor="#1A8BB4"></td>
+								</tr>
+								<tr>
+									<td id="n2f4" class="tablita"></td>
+								</tr>
+								<tr>
+									<td id="n2f3" class="tablita"></td>
+								</tr>
+								<tr>
+									<td id="n2f2" class="tablita"></td>
+								</tr>
+								<tr>
+									<td id="n2f1" class="tablita"></td>
+								</tr>
+								<tr>
+									<td bgcolor="#1A8BB4"></td>
+								</tr>
+								<tr>
+									<td id="n1f4" class="tablita"></td>
+								</tr>
+								<tr>
+									<td id="n1f3" class="tablita"></td>
+								</tr>
+								<tr>
+									<td id="n1f2" class="tablita"></td>
+								</tr>
+								<tr>
+									<td id="n1f1" class="tablita"></td>
+								</tr>
+								<tr>
+									<td bgcolor="#1A8BB4"></td>
+								</tr>
+							</tbody>
+						</table>		
+					</div>
+					<div class="col-md-1 offset-1">
+						<h3>RESULTADO:</h3>
+						<input type="text" id="resultado" value="" readonly="true" placeholder="Resultado...">
+						<button type="button" class="btn btn-success" id="btnconvertir" onClick="Resultado();">Convertir</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		
+<!--Modal Sistema Maya-->
+<div class="modal fade" id="modalSistema" tabindex="-1" role="dialog" aria-labelledby="modalSistema" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Tutorial</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+<!--Carrusel de imagenes -->		  
+<div id="carouselIndicators" class="carousel slide" data-ride="carousel" >
+  <ol class="carousel-indicators">
+    <li data-target="#carouselIndicators" data-slide-to="0" class="active"></li>
+    <li data-target="#carouselIndicators" data-slide-to="1"></li>
+    <li data-target="#carouselIndicators" data-slide-to="2"></li>
+	<li data-target="#carouselIndicators" data-slide-to="3"></li>
+	<li data-target="#carouselIndicators" data-slide-to="4"></li>
+    <li data-target="#carouselIndicators" data-slide-to="5"></li>
+	<li data-target="#carouselIndicators" data-slide-to="6"></li>
+	<li data-target="#carouselIndicators" data-slide-to="7"></li>
+  </ol>
+  <div class="carousel-inner">
+<div class="carousel-item active">
+  <img class="d-block w-100" src="./IMG/tutorial1.png" alt="Tutorial">
+</div>
+<div class="carousel-item">
+  <img class="d-block w-100" src="./IMG/tutorial2.png" alt="Tutorial">
+</div>
+<div class="carousel-item">
+  <img class="d-block w-100" src="./IMG/tutorial3.png" alt="Tutorial">
+</div>
+<div class="carousel-item">
+  <img class="d-block w-100" src="./IMG/tutorial4.png" alt="Tutorial">
+</div>
+<div class="carousel-item">
+  <img class="d-block w-100" src="./IMG/tutorial5.png" alt="Tutorial">
+</div>
+<div class="carousel-item">
+  <img class="d-block w-100" src="./IMG/tutorial6.png" alt="Tutorial">
+</div>
+<div class="carousel-item">
+  <img class="d-block w-100" src="./IMG/tutorial7.png" alt="Tutorial">
+</div>
+<div class="carousel-item">
+  <img class="d-block w-100" src="./IMG/tutorial8.png" alt="Tutorial">
+</div>
+<div class="carousel-item">
+  <img class="d-block w-100" src="./IMG/tutorial9.png" alt="Tutorial">
+</div>
+<div class="carousel-item">
+  <img class="d-block w-100" src="./IMG/tutorial10.png" alt="Tutorial">
+</div>
+<div class="carousel-item">
+  <img class="d-block w-100" src="./IMG/tutorial11.png" alt="Tutorial">
+</div>
+<div class="carousel-item">
+  <img class="d-block w-100" src="./IMG/tutorial12.png" alt="Tutorial ">
+</div>
+  </div>
+  <a class="carousel-control-prev" href="#carouselIndicators" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Anterior</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselIndicators" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Siguiente</span>
+  </a>
+</div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>		
+		
+    </body>
+	<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+	<script src="JS/javascript.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>	
+	
+</html>
